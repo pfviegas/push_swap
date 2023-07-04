@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:08:30 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/03 15:15:00 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/04 13:02:32 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
+	t_stack	*b;
 	t_stack *tmp;
 	
-//	t_stack	*stack_b;
-
-//	b = NULL;
 	a = check_args(argc, argv);
-
+	if (!a)
+	{
+		free_stack(&a);
+		error(5);
+	}	
+	b = NULL;
 	tmp = a;
 	ft_printf("a size: %d\n", ft_lstsize(a));
 	while (tmp)
@@ -33,6 +36,9 @@ int	main(int argc, char **argv)
 /*
 	if (!is_stack_sorted(a))
 		check_size(a);
+*/
+
+	ft_printf("\n*******************************************************\n");
 
 	sa(&a, 0);
 	tmp = a;
@@ -58,8 +64,171 @@ int	main(int argc, char **argv)
 		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
 		tmp = tmp->next;
 	}
+	
+
+	ft_printf("\n*******************************************************\n");
+
+	int conta = 0;
+	while (conta <= 20)
+	{
+		pb(&a, &b, 0);
+		conta++;	
+	}
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	ft_printf("\n*******************************************************\n");
+
+	sb(&b, 0);
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+	rb(&b, 0);
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+	rrb(&b, 0);
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	ft_printf("\n*******************************************************\n");
+
+	conta = 0;
+	while (conta <= 20)
+	{
+		pa(&a, &b, 0);
+		conta++;	
+	}		
+
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	tmp = a;
+	while (tmp)
+	{
+		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	ft_printf("\n*******************************************************\n");
+
+	pb(&a, &b, 0);
+	pb(&a, &b, 0);
+	pb(&a, &b, 0);
+
+	tmp = a;
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	while (tmp)
+	{
+		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	ft_printf("\n*******************************************************\n");
+
+	ss(&a, &b, 0);
+
+	tmp = a;
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	while (tmp)
+	{
+		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	ft_printf("\n*******************************************************\n");
+
+	rr(&a, &b, 0);
+
+	tmp = a;
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	while (tmp)
+	{
+		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}	
+
+	ft_printf("\n*******************************************************\n");
+
+	rrr(&a, &b, 0);
+
+	tmp = a;
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	while (tmp)
+	{
+		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+
+	tmp = b;
+	ft_printf("b size: %d\n", ft_lstsize(b));
+	while (tmp)
+	{
+		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}	
+/*
+	ra(&a, 0);
+	tmp = a;
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	while (tmp)
+	{
+		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+	rra(&a, 0);
+	tmp = a;
+	ft_printf("a size: %d\n", ft_lstsize(a));
+	while (tmp)
+	{
+		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
 */
 
-//	free(a);
+
+	free_stack(&a);
 	return (0);
 }

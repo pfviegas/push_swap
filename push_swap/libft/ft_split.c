@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:56:44 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/03 12:31:23 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/04 11:54:54 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 	n_words = count_words(s, c);
 	if (n_words == 0)
 		return (NULL);
-	words = (char **)malloc(sizeof(char *) * (n_words + 1));
+	words = (char **)malloc(sizeof(char *) * (n_words + 2));
 	if (!s || !words)
 		return (NULL);
 	i = 1;

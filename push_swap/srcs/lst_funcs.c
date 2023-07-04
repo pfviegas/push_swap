@@ -81,3 +81,49 @@ int	is_stack_sorted(t_stack *lst)
 	}
 	return (1);
 }
+
+// finds and returns the smallest number in the given stack.
+int	min(t_stack *a)
+{
+	int		i;
+
+	i = a->content;
+	while (a)
+	{
+		if (a->content < i)
+			i = a->content;
+		a = a->next;
+	}
+	return (i);
+}
+
+// finds and returns the biggest number in the given stack.
+int	max(t_stack *a)
+{
+	int		i;
+
+	i = a->content;
+	while (a)
+	{
+		if (a->content > i)
+			i = a->content;
+		a = a->next;
+	}
+	return (i);
+}
+
+// frees the stack.
+void	free_stack(t_stack **lst)
+{
+	t_stack	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		(*lst)->content = 0;
+		free(*lst);
+		*lst = tmp;
+	}
+}
