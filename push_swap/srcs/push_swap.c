@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:08:30 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/04 13:02:32 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/04 15:55:49 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-	t_stack *tmp;
+//	t_stack *tmp;
 	
 	a = check_args(argc, argv);
 	if (!a)
@@ -25,18 +25,11 @@ int	main(int argc, char **argv)
 		error(5);
 	}	
 	b = NULL;
-	tmp = a;
-	ft_printf("a size: %d\n", ft_lstsize(a));
-	while (tmp)
-	{
-		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
-		tmp = tmp->next;
-	}
 
-/*
 	if (!is_stack_sorted(a))
 		check_size(a);
-*/
+
+/*   TESTES
 
 	ft_printf("\n*******************************************************\n");
 
@@ -209,25 +202,7 @@ int	main(int argc, char **argv)
 		ft_printf("b\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
 		tmp = tmp->next;
 	}	
-/*
-	ra(&a, 0);
-	tmp = a;
-	ft_printf("a size: %d\n", ft_lstsize(a));
-	while (tmp)
-	{
-		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
-		tmp = tmp->next;
-	}
-	rra(&a, 0);
-	tmp = a;
-	ft_printf("a size: %d\n", ft_lstsize(a));
-	while (tmp)
-	{
-		ft_printf("a\tcontent: %d\tindex: %d\n", tmp->content, tmp->index);
-		tmp = tmp->next;
-	}
 */
-
 
 	free_stack(&a);
 	return (0);

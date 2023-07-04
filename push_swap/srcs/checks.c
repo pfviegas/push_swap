@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 12:12:58 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/03 14:33:55 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/04 16:02:49 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_stack	*check_args(int argc, char **argv)
 	{
 		arg = ft_split(argv[1], ' ');
 		if (arg == NULL)
-			exit(1);
+			error(6);
 	}
 	else
 		arg = argv;
@@ -92,12 +92,8 @@ void	check_size (t_stack *stk_a)
 	{
 		ft_printf("size <=5: %d\n", size);
 	}
-	else if (size <= 100)
+	else
 	{
-		ft_printf("size <=100: %d\n", size);
-	}
-	else if (size <= 500)
-	{
-		ft_printf("size <=500: %d\n", size);
+		ft_printf("size > 6: %d\n", size);
 	}
 }
