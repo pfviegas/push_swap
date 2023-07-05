@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:39:49 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 17:12:37 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/05 17:53:53 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,8 @@ void		sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 int			rotate_type_ab(t_stack *a, t_stack *b);
 int			rotate_type_ba(t_stack *a, t_stack *b);
 int			find_index(t_stack *stack_a, int nbr);
+int			case_rrarrb(t_stack *a, t_stack *_b, int c);
+int			find_place_b(t_stack *stack_b, int nbr_push);
+int			find_place_a(t_stack *stack_a, int nbr_push);
 
 #endif

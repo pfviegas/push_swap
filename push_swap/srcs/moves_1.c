@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:18:39 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 17:13:47 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/05 17:42:17 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	rotate_type_ab(t_stack *a, t_stack *b)
 	t_stack	*tmp;
 
 	tmp = a;
-	i = ft_case_rrarrb(a, b, a->nbr);
+	i = case_rrarrb(a, b, a->nbr);
 	while (tmp)
 	{
 		if (i > ft_case_rarb(a, b, tmp->nbr))

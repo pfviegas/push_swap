@@ -37,7 +37,7 @@ int	max(t_stack *stack_a)
 	{
 		if (stack_a->content > max)
 			max = stack_a->content;
-		a = stack_a->next;
+		stack_a = stack_a->next;
 	}
 	return (max);
 }

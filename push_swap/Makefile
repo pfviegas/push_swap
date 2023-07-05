@@ -6,7 +6,7 @@
 #    By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/28 11:17:30 by pviegas           #+#    #+#              #
-#    Updated: 2023/07/05 16:27:53 by pviegas          ###   ########.fr        #
+#    Updated: 2023/07/05 17:53:28 by pviegas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,13 @@ SRC_1 = srcs/push_swap.c
 SRC_2 =	srcs/checks.c \
 		srcs/lst_func_1.c \
 		srcs/lst_func_2.c \
+		srcs/lst_func_3.c \
 		srcs/ops_1.c \
 		srcs/ops_2.c \
 		srcs/ops_3.c \
 		srcs/sorts.c \
-		srcs/moves.c
+		srcs/moves_1.c \
+		srcs/moves_2.c
 #		srcs/push_swap/add_back.c \
 		srcs/push_swap/stack_new.c \
 		srcs/push_swap/ft_check_utils.c \
