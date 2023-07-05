@@ -6,7 +6,7 @@
 #    By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/28 11:17:30 by pviegas           #+#    #+#              #
-#    Updated: 2023/07/03 12:20:28 by pviegas          ###   ########.fr        #
+#    Updated: 2023/07/05 16:27:53 by pviegas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			= push_swap
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -fsanitize=address -g
 
 LIBFTDIR = libft/
 OBJ_DIR = obj/
@@ -24,12 +24,15 @@ BONUS = checker
 SRC_1 = srcs/push_swap.c 
 
 SRC_2 =	srcs/checks.c \
-		srcs/lst_funcs.c \
+		srcs/lst_func_1.c \
+		srcs/lst_func_2.c \
 		srcs/ops_1.c \
 		srcs/ops_2.c \
-		srcs/ops_3.c 
-#		srcs/push_swap/ft_add_back.c \
-		srcs/push_swap/ft_stack_new.c \
+		srcs/ops_3.c \
+		srcs/sorts.c \
+		srcs/moves.c
+#		srcs/push_swap/add_back.c \
+		srcs/push_swap/stack_new.c \
 		srcs/push_swap/ft_check_utils.c \
 		srcs/push_swap/ft_parse.c \
 		srcs/push_swap/solver_utils_ab.c \

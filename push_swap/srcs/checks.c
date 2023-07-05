@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 12:12:58 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/04 16:02:49 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/05 14:52:53 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,27 +66,26 @@ void	error(int error)
 }
 
 // saves the values passed as arguments in stack a
-void	save_args(char **argv, t_stack **stk_a)
+void	save_args(char **argv, t_stack **stack_a)
 {
 	int	i;
 
 	i = 1;
 	while (argv[i])
 	{
-		ft_add_back(stk_a, ft_stack_new(ft_atoi(argv[i]), i - 1));
+		add_back(stack_a, stack_new(ft_atoi(argv[i]), i - 1));
 		i++;
 	}
 }
 
-void	check_size (t_stack *stk_a)
+void	check_size (t_stack **stack_a)
 {
 	size_t	size;
 	
-	size = ft_lstsize(stk_a);
-	ft_printf("size : %d\n", size);
+	size = stack_size(*stack_a);
 	if (size <= 3)
 	{
-		ft_printf("size <=3: %d\n", size);
+		sort_3(stack_a);
 	}
 	else if (size <= 5)
 	{

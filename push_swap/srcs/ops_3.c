@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 11:27:30 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/03 12:25:40 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/05 14:15:12 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	rra(t_stack **a, int j)
 // rrb (reverse rotate b)
 // shift down all elements of stack b by 1. 
 // the last element becomes the first.
-void	rrb(t_stack **b, int j)
+void	rrb(t_stack **b, int print)
 {
 	t_stack	*tmp;
 	int		i;
@@ -64,12 +64,12 @@ void	rrb(t_stack **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
+	if (print == 0)
 		write(1, "rrb\n", 4);
 }
 
 // rrr : rra and rrb at the same time.
-void	rrr(t_stack **a, t_stack **b, int j)
+void	rrr(t_stack **a, t_stack **b, int print)
 {
 	t_stack	*tmp;
 	int		i;
@@ -90,11 +90,11 @@ void	rrr(t_stack **a, t_stack **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	rrr_sub(b, j);
+	rrr_sub(b, print);
 }
 
 // Second part of the rrr function
-void	rrr_sub(t_stack **b, int j)
+void	rrr_sub(t_stack **b, int print)
 {
 	t_stack	*tmp;
 	int		i;
@@ -113,6 +113,6 @@ void	rrr_sub(t_stack **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
+	if (print == 0)
 		write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 11:27:30 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/04 12:33:49 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/05 13:35:52 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	sa(t_stack **stack_a, int print)
 	*stack_a = (*stack_a)->next;
 	tmp->next = (*stack_a)->next;
 	(*stack_a)->next = tmp;
+	(*stack_a)->index = 0;
+	(*stack_a)->next->index = 1;
 	if (print == 0)
 		write(1, "sa\n", 3);
 }

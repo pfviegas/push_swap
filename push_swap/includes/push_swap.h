@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:39:49 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/04 11:41:46 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/05 17:12:37 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,32 @@ int			ft_isdigit(int c);
 void		check_doubles(int num, char *arg[], int i);
 void		error(int error);
 void		save_args(char **argv, t_stack **stk_a);
-void		ft_add_back(t_stack **stack, t_stack *stack_new);
-t_stack		*ft_stack_new(int content, int index);
-t_stack		*ft_lstlast(t_stack *lst);
-int			ft_lstsize(t_stack *lst);
+void		add_back(t_stack **stack, t_stack *stack_new);
+t_stack		*stack_new(int content, int index);
+t_stack		*stack_last(t_stack *lst);
+int			stack_size(t_stack *lst);
 int			is_stack_sorted(t_stack *stack_a);
 void		free_stack(t_stack **lst);
-void		sa(t_stack **a, int j);
-void		sb(t_stack **b, int j);
-void		ss(t_stack **a, t_stack **b, int j);
-void		pa(t_stack **a, t_stack **b, int j);
-void		pb(t_stack **stack_a, t_stack **stack_b, int j);
-void		ra(t_stack **a, int j);
-void		rb(t_stack **b, int j);
-void		rr(t_stack **a, t_stack **b, int j);
-void		rra(t_stack **a, int j);
-void		rrb(t_stack **b, int j);
-void		rrr(t_stack **a, t_stack **b, int j);
-void		rrr_sub(t_stack **b, int j);
-void		check_size (t_stack *stk_a);
+void		sa(t_stack **a, int print);
+void		sb(t_stack **b, int print);
+void		ss(t_stack **a, t_stack **b, int print);
+void		pa(t_stack **a, t_stack **b, int print);
+void		pb(t_stack **stack_a, t_stack **stack_b, int print);
+void		ra(t_stack **a, int print);
+void		rb(t_stack **b, int print);
+void		rr(t_stack **a, t_stack **b, int print);
+void		rra(t_stack **a, int print);
+void		rrb(t_stack **b, int print);
+void		rrr(t_stack **a, t_stack **b, int print);
+void		rrr_sub(t_stack **b, int print);
+void		check_size (t_stack **stack_a);
 void		sort_3(t_stack **stack_a);
-int			min(t_stack *a);
-int			max(t_stack *a);
+int			min(t_stack *stack_a);
+int			max(t_stack *stack_a);
+t_stack		*sort_b(t_stack **stack_a);
+void		sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
+int			rotate_type_ab(t_stack *a, t_stack *b);
+int			rotate_type_ba(t_stack *a, t_stack *b);
+int			find_index(t_stack *stack_a, int nbr);
 
 #endif

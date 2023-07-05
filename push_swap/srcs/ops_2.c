@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 11:27:30 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/04 12:23:14 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/05 13:45:43 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,18 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int print)
 void	ra(t_stack **stack_a, int print)
 {
 	t_stack	*tmp;
-
+	// 2 1 0
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
+	// 2
 	tmp = *stack_a;
-	*stack_a = ft_lstlast(*stack_a);
+	// 0
+	*stack_a = stack_last(*stack_a);
+	// 0->next = 2
 	(*stack_a)->next = tmp;
+	// 1
 	*stack_a = tmp->next;
+	// 2->next = NULL
 	tmp->next = NULL;
 	if (print == 0)
 		write(1, "ra\n", 3);
@@ -74,7 +79,7 @@ void	rb(t_stack **stack_b, int print)
 	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	tmp = *stack_b;
-	*stack_b = ft_lstlast(*stack_b);
+	*stack_b = stack_last(*stack_b);
 	(*stack_b)->next = tmp;
 	*stack_b = tmp->next;
 	tmp->next = NULL;
@@ -90,12 +95,12 @@ void	rr(t_stack **stack_a, t_stack **stack_b, int print)
 	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
 		return ;
 	tmp = *stack_a;
-	*stack_a = ft_lstlast(*stack_a);
+	*stack_a = stack_last(*stack_a);
 	(*stack_a)->next = tmp;
 	*stack_a = tmp->next;
 	tmp->next = NULL;
 	tmp = *stack_b;
-	*stack_b = ft_lstlast(*stack_b);
+	*stack_b = stack_last(*stack_b);
 	(*stack_b)->next = tmp;
 	*stack_b = tmp->next;
 	tmp->next = NULL;

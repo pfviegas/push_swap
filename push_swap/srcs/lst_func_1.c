@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_funcs.c                                        :+:      :+:    :+:   */
+/*   lst_func_1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 11:29:18 by pviegas           #+#    #+#             */
-/*   Updated: 2023/06/30 11:29:18 by marvin           ###   ########.fr       */
+/*   Created: 2023/07/05 14:55:02 by pviegas           #+#    #+#             */
+/*   Updated: 2023/07/05 14:55:02 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 // creates a new node at the end of the stack
 // with the content passed as argument
-void	ft_add_back(t_stack **stack, t_stack *stack_new)
+void	add_back(t_stack **stack, t_stack *stack_new)
 {
 	if (!stack)
 		return ;
 	if (!*stack)
 		*stack = stack_new;
 	else
-		(ft_lstlast(*stack))->next = stack_new;
+		(stack_last(*stack))->next = stack_new;
 }
 
 // creates a new stack node with given number.
-t_stack	*ft_stack_new(int content, int index)
+t_stack	*stack_new(int content, int index)
 {
 	t_stack	*new;
 
@@ -39,7 +39,7 @@ t_stack	*ft_stack_new(int content, int index)
 }
 
 // This function returns the last element of the stack.
-t_stack	*ft_lstlast(t_stack *lst)
+t_stack	*stack_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -51,10 +51,10 @@ t_stack	*ft_lstlast(t_stack *lst)
 }
 
 // returns the size of the stack.
-int	ft_lstsize(t_stack *lst)
+int	stack_size(t_stack *lst)
 {
 	size_t	i;
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = lst;
 	i = 0;
@@ -80,50 +80,4 @@ int	is_stack_sorted(t_stack *lst)
 		prev = lst->content;
 	}
 	return (1);
-}
-
-// finds and returns the smallest number in the given stack.
-int	min(t_stack *a)
-{
-	int		i;
-
-	i = a->content;
-	while (a)
-	{
-		if (a->content < i)
-			i = a->content;
-		a = a->next;
-	}
-	return (i);
-}
-
-// finds and returns the biggest number in the given stack.
-int	max(t_stack *a)
-{
-	int		i;
-
-	i = a->content;
-	while (a)
-	{
-		if (a->content > i)
-			i = a->content;
-		a = a->next;
-	}
-	return (i);
-}
-
-// frees the stack.
-void	free_stack(t_stack **lst)
-{
-	t_stack	*tmp;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = (*lst)->next;
-		(*lst)->content = 0;
-		free(*lst);
-		*lst = tmp;
-	}
 }
