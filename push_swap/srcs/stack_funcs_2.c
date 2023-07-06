@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_func_2.c                                       :+:      :+:    :+:   */
+/*   stacks_funcs_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 14:56:23 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 14:56:23 by pviegas          ###   ########.fr       */
+/*   Created: 2023/07/06 15:26:17 by pviegas           #+#    #+#             */
+/*   Updated: 2023/07/06 15:26:17 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ void	free_stack(t_stack **lst)
 // checks the index of a number in the stack.
 int	find_index(t_stack *stack_a, int nbr)
 {
-	int		i;
+	int		index;
 
-	i = 0;
+	index = 0;
 	while (stack_a->content != nbr)
 	{
-		i++;
+		index++;
 		stack_a = stack_a->next;
 	}
 	stack_a->index = 0;
-	return (i);
+	return (index);
 }

@@ -5,23 +5,99 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 17:25:39 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 17:34:29 by pviegas          ###   ########.fr       */
+/*   Created: 2023/07/06 15:23:04 by pviegas           #+#    #+#             */
+/*   Updated: 2023/07/06 15:23:06 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// calculates how many times we should rotate the stacks together.
-// after a certain amoun of rotate, we will proceed only with one stack
-// rotation. Since here we have reverse rotate,rather than index number,
-// we check reverse index number which is calculated by list_size (index_number)
-int	case_rrarrb(t_stack *a, t_stack *_b, int c)
-{
-	int	moves;
+#include "../includes/push_swap.h"
 
-	moves = 0;
-	if (ft_find_place_b(b, c))
-		moves = stack_size(b) - ft_find_place_b(b, c);
-	if ((moves < (stack_size(a) - find_index(a, c))) && find_index(a, c))
-		moves = stack_size(a) - find_index(a, c);
-	return (moves);
+// pa (push a)
+// take the first element at the top of b and put it at the top of a. 
+// do nothing if b is empty.
+void	pa(t_stack **stack_a, t_stack **stack_b, int print)
+{
+	t_stack	*tmp;
+
+	if (!*stack_b)
+		return ;
+	tmp = *stack_a;
+	*stack_a = *stack_b;
+	*stack_b = (*stack_b)->next;
+	(*stack_a)->next = tmp;
+	if (print == 0)
+		write(1, "pa\n", 3);
+}
+
+// pb (push b)
+// take the first element at the top of a and put it at the top of b.
+// do nothing if a is empty.
+void	pb(t_stack **stack_a, t_stack **stack_b, int print)
+{
+	t_stack	*tmp;
+
+	if (!*stack_a)
+		return ;
+	tmp = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = (*stack_a)->next;
+	(*stack_b)->next = tmp;
+	if (print == 0)
+		write(1, "pb\n", 3);
+}
+
+// ra (rotate a)
+// shift up all elements of stack a by 1. 
+// the first element becomes the last.
+void	ra(t_stack **stack_a, int print)
+{
+	t_stack	*tmp;
+	if (!*stack_a || !(*stack_a)->next)
+		return ;
+	tmp = *stack_a;
+	*stack_a = stack_last(*stack_a);
+	(*stack_a)->next = tmp;
+	*stack_a = tmp->next;
+	tmp->next = NULL;
+	if (print == 0)
+		write(1, "ra\n", 3);
+}
+
+// rb (rotate b)
+// shift up all elements of stack b by 1. 
+// the first element becomes the last.
+void	rb(t_stack **stack_b, int print)
+{
+	t_stack	*tmp;
+
+	if (!*stack_b || !(*stack_b)->next)
+		return ;
+	tmp = *stack_b;
+	*stack_b = stack_last(*stack_b);
+	(*stack_b)->next = tmp;
+	*stack_b = tmp->next;
+	tmp->next = NULL;
+	if (print == 0)
+		write(1, "rb\n", 3);
+}
+
+// rr : ra and rb at the same time
+void	rr(t_stack **stack_a, t_stack **stack_b, int print)
+{
+	t_stack	*tmp;
+
+	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
+		return ;
+	tmp = *stack_a;
+	*stack_a = stack_last(*stack_a);
+	(*stack_a)->next = tmp;
+	*stack_a = tmp->next;
+	tmp->next = NULL;
+	tmp = *stack_b;
+	*stack_b = stack_last(*stack_b);
+	(*stack_b)->next = tmp;
+	*stack_b = tmp->next;
+	tmp->next = NULL;
+	if (print == 0)
+		write(1, "rr\n", 3);
 }

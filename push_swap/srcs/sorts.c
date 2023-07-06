@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:50:18 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 17:14:39 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/06 17:49:48 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // Because, even the stack_a is sorted at the end, the minimum number have to 
 // at the top of the stack_a. 
 // So, it simply brings the smallest number of the stack_a to the top.
-void	ft_sort(t_stack **stack_a)
+void	sort_stack(t_stack **stack_a)
 {
 	t_stack	*stack_b;
 	int		i;
@@ -64,6 +64,33 @@ t_stack	*sort_b(t_stack **stack_a)
 	return (stack_b);
 }
 
+// pushing back the elements from stack_b to stack_a until stack_b is empty. 
+t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
+{
+	int		i;
+	t_stack	*tmp;
+
+	while (*stack_b)
+	{
+		tmp = *stack_b;
+		i = rotate_type_ba(*stack_a, *stack_b);
+		while (i >= 0)
+		{
+			if (i == case_rarb_a(*stack_a, *stack_b, tmp->content))
+				i = apply_rarb(stack_a, stack_b, tmp->content, 'b');
+			else if (i == case_rarrb_a(*stack_a, *stack_b, tmp->content))
+				i = apply_rarrb(stack_a, stack_b, tmp->content, 'b');
+			else if (i == case_rrarrb_a(*stack_a, *stack_b, tmp->content))
+				i = apply_rrarrb(stack_a, stack_b, tmp->content, 'b');
+			else if (i == case_rrarb_a(*stack_a, *stack_b, tmp->content))
+				i = apply_rrarb(stack_a, stack_b, tmp->content, 'b');
+			else
+				tmp = tmp->next;
+		}
+	}
+	return (stack_a);
+}
+
 // sort and push stacks until 3 elements left behind.
 void	sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 {
@@ -76,14 +103,14 @@ void	sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 		i = rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == ft_case_rrarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == ft_case_rarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == ft_case_rrarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'a');
+			if (i == case_rarb(*stack_a, *stack_b, tmp->content))
+				i = apply_rarb(stack_a, stack_b, tmp->content, 'a');
+			else if (i == case_rrarrb(*stack_a, *stack_b, tmp->content))
+				i = apply_rrarrb(stack_a, stack_b, tmp->content, 'a');
+			else if (i == case_rarrb(*stack_a, *stack_b, tmp->content))
+				i = apply_rarrb(stack_a, stack_b, tmp->content, 'a');
+			else if (i == case_rrarb(*stack_a, *stack_b, tmp->content))
+				i = apply_rrarb(stack_a, stack_b, tmp->content, 'a');
 			else
 				tmp = tmp->next;
 		}

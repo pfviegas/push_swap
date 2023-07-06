@@ -6,7 +6,7 @@
 #    By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/28 11:17:30 by pviegas           #+#    #+#              #
-#    Updated: 2023/07/05 17:53:28 by pviegas          ###   ########.fr        #
+#    Updated: 2023/07/06 17:18:30 by pviegas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,38 +23,18 @@ BONUS = checker
 
 SRC_1 = srcs/push_swap.c 
 
-SRC_2 =	srcs/checks.c \
-		srcs/lst_func_1.c \
-		srcs/lst_func_2.c \
-		srcs/lst_func_3.c \
-		srcs/ops_1.c \
-		srcs/ops_2.c \
-		srcs/ops_3.c \
-		srcs/sorts.c \
+SRC_2 =	srcs/apply_moves.c \
+		srcs/checks.c \
+		srcs/count_moves_1.c \
+		srcs/count_moves_2.c \
+		srcs/count_moves_3.c \
 		srcs/moves_1.c \
-		srcs/moves_2.c
-#		srcs/push_swap/add_back.c \
-		srcs/push_swap/stack_new.c \
-		srcs/push_swap/ft_check_utils.c \
-		srcs/push_swap/ft_parse.c \
-		srcs/push_swap/solver_utils_ab.c \
-		srcs/push_swap/solver_utils_ba.c \
-		srcs/push_swap/ft_rotate_and_push.c \
-		srcs/push_swap/operations.c \
-		srcs/push_swap/operations_2.c \
-		srcs/push_swap/operations_3.c \
-		srcs/push_swap/ft_check_dup.c \
-		srcs/push_swap/ft_check_sorted.c \
-		srcs/push_swap/ft_error_print.c \
-		srcs/push_swap/ft_free.c \
-		srcs/push_swap/lst_utils.c \
-		srcs/push_swap/lst_utils_2.c \
-		srcs/push_swap/ft_parse_args_quoted.c \
-		srcs/push_swap/ft_list_args.c \
-		srcs/push_swap/ft_check_args.c \
-		srcs/push_swap/ft_sort_big.c \
-		srcs/push_swap/ft_sort_three.c \
-		srcs/push_swap/ft_rotate_type.c \
+		srcs/moves_2.c \
+		srcs/moves_3.c \
+		srcs/sorts.c \
+		srcs/stack_funcs_1.c \
+		srcs/stack_funcs_2.c \
+		srcs/stack_funcs_3.c \
 		
 BONUS_SRC = srcs/checker/checker.c \
 			srcs/checker/checker_utils.c \

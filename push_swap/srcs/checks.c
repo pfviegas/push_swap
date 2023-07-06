@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 12:12:58 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 14:52:53 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/06 17:51:48 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,8 @@ void	check_size (t_stack **stack_a)
 	{
 		sort_3(stack_a);
 	}
-	else if (size <= 5)
-	{
-		ft_printf("size <=5: %d\n", size);
-	}
 	else
 	{
-		ft_printf("size > 6: %d\n", size);
+		sort_stack(stack_a);
 	}
 }

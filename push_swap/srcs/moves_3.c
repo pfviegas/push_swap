@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_3.c                                            :+:      :+:    :+:   */
+/*   moves_3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 11:27:30 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 14:15:12 by pviegas          ###   ########.fr       */
+/*   Created: 2023/07/06 15:23:12 by pviegas           #+#    #+#             */
+/*   Updated: 2023/07/06 15:23:14 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 // rra (reverse rotate a)
 // shift down all elements of stack a by 1. 
 // the last element becomes the first.
-void	rra(t_stack **a, int j)
+void	rra(t_stack **stack_a, int j)
 {
 	t_stack	*tmp;
 	int		i;
 
-	if (!*a || !(*a)->next)
+	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	i = 0;
-	tmp = *a;
-	while ((*a)->next)
+	tmp = *stack_a;
+	while ((*stack_a)->next)
 	{
-		*a = (*a)->next;
+		*stack_a = (*stack_a)->next;
 		i++;
 	}
-	(*a)->next = tmp;
+	(*stack_a)->next = tmp;
 	while (i > 1)
 	{
 		tmp = tmp->next;
@@ -43,21 +43,21 @@ void	rra(t_stack **a, int j)
 // rrb (reverse rotate b)
 // shift down all elements of stack b by 1. 
 // the last element becomes the first.
-void	rrb(t_stack **b, int print)
+void	rrb(t_stack **stack_b, int print)
 {
 	t_stack	*tmp;
 	int		i;
 
-	if (!*b || !(*b)->next)
+	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	i = 0;
-	tmp = *b;
-	while ((*b)->next)
+	tmp = *stack_b;
+	while ((*stack_b)->next)
 	{
 		i++;
-		*b = (*b)->next;
+		*stack_b = (*stack_b)->next;
 	}
-	(*b)->next = tmp;
+	(*stack_b)->next = tmp;
 	while (i > 1)
 	{
 		tmp = tmp->next;
@@ -69,44 +69,44 @@ void	rrb(t_stack **b, int print)
 }
 
 // rrr : rra and rrb at the same time.
-void	rrr(t_stack **a, t_stack **b, int print)
+void	rrr(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	t_stack	*tmp;
 	int		i;
 
-	if (!*a || !((*a)->next) || !*b || !((*b)->next))
+	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
 		return ;
 	i = 0;
-	tmp = *a;
-	while ((*a)->next)
+	tmp = *stack_a;
+	while ((*stack_a)->next)
 	{
 		i++;
-		*a = (*a)->next;
+		*stack_a = (*stack_a)->next;
 	}
-	(*a)->next = tmp;
+	(*stack_a)->next = tmp;
 	while (i > 1)
 	{
 		tmp = tmp->next;
 		i--;
 	}
 	tmp->next = NULL;
-	rrr_sub(b, print);
+	rrr_sub(stack_b, print);
 }
 
 // Second part of the rrr function
-void	rrr_sub(t_stack **b, int print)
+void	rrr_sub(t_stack **stack_b, int print)
 {
 	t_stack	*tmp;
 	int		i;
 
 	i = 0;
-	tmp = *b;
-	while ((*b)->next)
+	tmp = *stack_b;
+	while ((*stack_b)->next)
 	{
 		i++;
-		*b = (*b)->next;
+		*stack_b = (*stack_b)->next;
 	}
-	(*b)->next = tmp;
+	(*stack_b)->next = tmp;
 	while (i > 1)
 	{
 		tmp = tmp->next;
