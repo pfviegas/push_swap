@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 12:12:58 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/10 14:42:00 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/10 15:27:47 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,7 @@ t_stack	*check_args(int argc, char **argv)
 		while (arg[i])
 			i++;
 		while (i-- > 1)
-		{
-			printf ("arg[%d] --> %s\n", i, arg[i]);
 			free(arg[i]);
-		}
-//		free(arg[i]);
-		printf ("i --> %d\n", i);
 		free(arg);
 	}
 	return (stack_a);
