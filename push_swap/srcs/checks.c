@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 12:12:58 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/06 17:51:48 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/10 14:42:00 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ t_stack	*check_args(int argc, char **argv)
 	else if (argc == 2)
 	{
 		arg = ft_split(argv[1], ' ');
-		if (arg == NULL)
+		if (!arg)
+		{
+			free(arg);
 			error(6);
+		}
 	}
 	else
 		arg = argv;
@@ -42,7 +45,19 @@ t_stack	*check_args(int argc, char **argv)
 	}
 	save_args(arg, &stack_a);
 	if (argc == 2)
+	{		
+		i = 0;
+		while (arg[i])
+			i++;
+		while (i-- > 1)
+		{
+			printf ("arg[%d] --> %s\n", i, arg[i]);
+			free(arg[i]);
+		}
+//		free(arg[i]);
+		printf ("i --> %d\n", i);
 		free(arg);
+	}
 	return (stack_a);
 }
 
@@ -61,7 +76,7 @@ void	check_doubles(int num, char **arg, int i)
 // error messages (remove exit code from message)
 void	error(int error)
 {
-	ft_printf ("Error %d\n", error);
+	ft_printf ("Error\n", error);
 	exit(1);
 }
 

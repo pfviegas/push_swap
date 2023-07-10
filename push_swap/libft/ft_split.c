@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:56:44 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/05 12:30:38 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/10 14:25:24 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ static char	*next_word(const char **s, char c)
 		(*s)++;
 	word = ft_substr(start, 0, *s - start);
 	if (!word)
+	{
+		free(word);
 		return (NULL);
+	}
 	if (**s)
 		(*s)++;
 	return (word);
@@ -81,8 +84,12 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	words = (char **)malloc(sizeof(char *) * (n_words + 2));
 	if (!s || !words)
+	{
+		free(words);
 		return (NULL);
+	}
 	i = 1;
+	words[0] = "./push_swap";
 	while (i <= n_words )
 	{
 		words[i] = next_word(&s, c);
