@@ -13,15 +13,18 @@
 /**
  * @brief Concatena duas strings com limite de tamanho.
  *
- * A função ft_strlcat concatena a string 'src' à string 'dst', com limite de tamanho 'size'.
- * Ela garante que a string resultante seja sempre nul-terminada e que o tamanho final não exceda 'size'.
+ * A função ft_strlcat concatena a string 'src' à string 'dst', com limite 
+ * de tamanho 'size'.
+ * Ela garante que a string resultante seja sempre nul-terminada e que o 
+ * tamanho final não exceda 'size'.
  * 
  * @param dst O buffer de destino para a concatenação das strings.
  * @param src A string a ser concatenada.
- * @param size O tamanho máximo do buffer 'dst', incluindo o espaço para o caractere nul.
+ * @param size O tamanho máximo do buffer 'dst', incluindo o espaço para o 
+ *             caractere nul.
  * @return O comprimento total da string resultante após a concatenação.
  */
- 
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)

@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:39:49 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/06 17:50:51 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 16:52:02 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char		**ft_split(char const *s, char c);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			ft_atoi(const char *str);
 int			ft_isdigit(int c);
-void		check_doubles(int num, char *arg[], int i);
+void		check_doubles(char **arg);
 void		error(int error);
 void		save_args(char **argv, t_stack **stack_a);
 void		add_back(t_stack **stack, t_stack *stack_new);
@@ -51,7 +51,7 @@ void		rra(t_stack **stack_a, int print);
 void		rrb(t_stack **stack_b, int print);
 void		rrr(t_stack **stack_a, t_stack **stack_b, int print);
 void		rrr_sub(t_stack **stack_b, int print);
-void		check_size (t_stack **stack_a);
+void		check_size(t_stack **stack_a);
 void		sort_3(t_stack **stack_a);
 int			min(t_stack *stack_a);
 int			max(t_stack *stack_a);

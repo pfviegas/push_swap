@@ -6,28 +6,25 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:55:51 by pviegas           #+#    #+#             */
-/*   Updated: 2023/05/25 13:37:13 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 16:31:08 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @brief Imprime uma sequência formatada no stdout.
  *
- * A função `ft_printf` permite imprimir uma sequência formatada no stdout. A sequência
- * formatada é composta por caracteres de texto e especificadores de formato, que são
- * substituídos pelos valores correspondentes passados como argumentos.
+ * A função `ft_printf` permite imprimir uma sequência formatada no stdout. 
+ * A sequência formatada é composta por caracteres de texto e especificadores 
+ * de formato, que são substituídos pelos valores correspondentes passados como 
+ * argumentos.
  *
  * @param format A sequência de formato a ser impressa.
  * @param ... Os argumentos correspondentes aos especificadores de formato.
  * @return O número total de caracteres impressos, ou 0 se ocorrer um erro.
  *
  * @remarks
- * - A função suporta os seguintes especificadores de formato: 'd', 'i', 'c', 's', 'p', 'u', 'x', 'X', '%'.
- * - Os especificadores de formato são substituídos pelos valores correspondentes dos argumentos fornecidos.
- * - Os argumentos são tratados de acordo com o tipo especificado no formato.
- * - Os caracteres que não são especificadores de formato são impressos diretamente.
- * - A função utiliza as funções auxiliares da biblioteca "libft.h" para realizar as operações de impressão.
- * - Os valores impressos são enviados para o stdout.
+ * - A função suporta os seguintes especificadores de formato: 
+ *     'd', 'i', 'c', 's', 'p', 'u', 'x', 'X', '%'.
  *
  * @see ft_check_format
  */

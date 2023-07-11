@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:23:04 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/06 15:23:06 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 14:06:15 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int print)
 void	ra(t_stack **stack_a, int print)
 {
 	t_stack	*tmp;
+
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	tmp = *stack_a;

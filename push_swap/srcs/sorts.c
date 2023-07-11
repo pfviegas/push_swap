@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:50:18 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/10 12:20:27 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 14:26:46 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	sort_stack(t_stack **stack_a)
 		{
 			while ((*stack_a)->content != min(*stack_a))
 				rra(stack_a, 0);
-		}			
-	}	
+		}
+	}
 }
 
 // pushes one by one, all the elements in stack_a to the stack_b, 

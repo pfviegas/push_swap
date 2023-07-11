@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:56:44 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/10 14:25:24 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 16:24:35 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,27 +72,23 @@ static char	*next_word(const char **s, char c)
 	return (word);
 }
 
-// split the string in words (push_swap modified)
+// split the string in words 
 char	**ft_split(char const *s, char c)
 {
 	size_t		i;
 	size_t		n_words;
 	char		**words;
+	const char	*p;
 
+	p = s;
 	n_words = count_words(s, c);
-	if (n_words == 0)
-		return (NULL);
-	words = (char **)malloc(sizeof(char *) * (n_words + 2));
+	words = (char **)malloc(sizeof(char *) * (n_words + 1));
 	if (!s || !words)
-	{
-		free(words);
 		return (NULL);
-	}
-	i = 1;
-	words[0] = "./push_swap";
-	while (i <= n_words )
+	i = 0;
+	while (i < n_words)
 	{
-		words[i] = next_word(&s, c);
+		words[i] = next_word(&p, c);
 		if (!words[i])
 		{
 			while (i--)

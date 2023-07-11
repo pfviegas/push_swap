@@ -22,7 +22,7 @@
  * @return The uppercase equivalent of the input character if it is a valid
  * lowercase character. Otherwise, the input character is returned unchanged.
  */
- 
+
 #include "libft.h"
 
 int	ft_toupper(int c)

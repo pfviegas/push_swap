@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:20:11 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/06 15:48:59 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 14:26:02 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	rotate_type_ab(t_stack *stack_a, t_stack *stack_b)
 	return (moves);
 }
 
-
 // calculates which rotation combination is best to use to sort the stack. 
 // after rotation there is always one push operation is left to do which is 
 // embedded in code, this function is used during push from B to A.
@@ -54,7 +53,6 @@ int	rotate_type_ba(t_stack *stack_a, t_stack *stack_b)
 			moves = case_rarb_a(stack_a, stack_b, tmp->content);
 		if (moves > case_rrarrb_a(stack_a, stack_b, tmp->content))
 			moves = case_rrarrb_a(stack_a, stack_b, tmp->content);
-		if (moves > case_rarrb_a(stack_a, stack_b, tmp->content))
 		if (moves > case_rarrb_a(stack_a, stack_b, tmp->content))
 			moves = case_rarrb_a(stack_a, stack_b, tmp->content);
 		if (moves > case_rrarb_a(stack_a, stack_b, tmp->content))

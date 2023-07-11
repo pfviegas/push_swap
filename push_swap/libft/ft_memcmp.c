@@ -13,12 +13,14 @@
 /**
  * @brief Compara os primeiros 'n' bytes de duas áreas de memória.
  *
- * A função ft_memcmp compara os primeiros 'n' bytes das áreas de memória apontadas por 'str1' e 'str2'.
+ * A função ft_memcmp compara os primeiros 'n' bytes das áreas de memória 
+ * apontadas por 'str1' e 'str2'.
  *
  * @param str1 Um ponteiro para a primeira área de memória a ser comparada.
  * @param str2 Um ponteiro para a segunda área de memória a ser comparada.
  * @param n O número de bytes a serem comparados.
- * @return Um valor inteiro negativo se 'str1' for menor que 'str2', um valor inteiro positivo se 'str1' for maior que 'str2' ou 0 se forem iguais.
+ * @return Um valor inteiro negativo se 'str1' for menor que 'str2', um valor 
+ * inteiro positivo se 'str1' for maior que 'str2' ou 0 se forem iguais.
  */
 
 #include "libft.h"

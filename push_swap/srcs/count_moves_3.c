@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:20:03 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/06 15:47:29 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 14:22:00 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	case_rrarrb_a(t_stack *stack_a, t_stack *stack_b, int c)
 	moves = 0;
 	if (find_place_a(stack_a, c))
 		moves = stack_size(stack_a) - find_place_a(stack_a, c);
-	if ((moves < (stack_size(stack_b) - find_index(stack_b, c))) && find_index(stack_b, c))
+	if ((moves < (stack_size(stack_b) - find_index(stack_b, c))) && 
+		find_index(stack_b, c))
 		moves = stack_size(stack_b) - find_index(stack_b, c);
 	return (moves);
 }

@@ -18,9 +18,10 @@
  *
  * @param s1 A primeira string a ser concatenada.
  * @param s2 A segunda string a ser concatenada.
- * @return Um ponteiro para a nova string resultante, ou NULL em caso de falha na alocação de memória.
+ * @return Um ponteiro para a nova string resultante, ou NULL em caso de falha 
+ * na alocação de memória.
  */
- 
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

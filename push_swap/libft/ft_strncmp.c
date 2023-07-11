@@ -13,10 +13,10 @@
 /**
  * @brief Compara duas strings de forma segura até um tamanho especificado.
  *
- * A função ft_strncmp compara os caracteres das strings 'str1' e 'str2' até um tamanho
- * máximo especificado por 'n'. A comparação é feita de forma segura, evitando acessar
- * além dos limites das strings. A função retorna um valor inteiro indicando a ordem
- * lexicográfica das strings.
+ * A função ft_strncmp compara os caracteres das strings 'str1' e 'str2' até 
+ * um tamanho máximo especificado por 'n'. A comparação é feita de forma segura, 
+ * evitando acessar * além dos limites das strings. A função retorna um valor 
+ * inteiro indicando a ordem lexicográfica das strings.
  *
  * @param str1 A primeira string a ser comparada.
  * @param str2 A segunda string a ser comparada.
@@ -24,7 +24,7 @@
  * @return Um valor inteiro menor, igual ou maior que zero, indicando se 'str1' é
  *         menor, igual ou maior que 'str2', respectivamente.
  */
- 
+
 #include "libft.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)

@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 13:29:37 by pviegas           #+#    #+#             */
-/*   Updated: 2023/05/25 14:01:36 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 16:34:13 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 /**
  * @brief Verifica se a linha deve ser liberada e retorna NULL se necessário.
  *
- * Esta função verifica se a linha deve ser liberada com base no número de bytes lidos.
- * Se `bytes` for 0 e a linha estiver vazia, a função libera a memória alocada para a linha
- * e retorna NULL.
+ * Esta função verifica se a linha deve ser liberada com base no número de 
+ * bytes lidos.
+ * Se `bytes` for 0 e a linha estiver vazia, a função libera a memória alocada 
+ * para a linha e retorna NULL.
  *
  * @param line A linha a ser verificada.
  * @param bytes O número de bytes lidos.
@@ -44,10 +45,12 @@ static char	*chk_line(char *line, int bytes)
 /**
  * @brief Lê uma linha do arquivo referenciado pelo descritor de arquivo.
  *
- * Esta função lê uma linha do arquivo referenciado pelo descritor de arquivo `fd`.
- * A função lê os bytes do arquivo em um buffer temporário, concatenando-os na linha atual.
- * A função continua lendo até encontrar um caractere de nova linha ('\n') ou até que não haja mais
- * bytes para ler do arquivo.
+ * Esta função lê uma linha do arquivo referenciado pelo descritor de 
+ * arquivo `fd`.
+ * A função lê os bytes do arquivo em um buffer temporário, concatenando-os 
+ * na linha atual.
+ * A função continua lendo até encontrar um caractere de nova linha ('\n') ou 
+ * até que não haja mais bytes para ler do arquivo.
  *
  * @param fd O descritor de arquivo do arquivo a ser lido.
  * @param line A linha atual.
@@ -65,7 +68,6 @@ static char	*read_line(int fd, char *line)
 	if (str == NULL)
 		return (0);
 	bytes_read = 1;
-//	line = chk_line(line, bytes_read);
 	while (!ft_strchr(line, '\n') && bytes_read > 0)
 	{
 		bytes_read = read(fd, str, BUFFER_SIZE);
@@ -86,8 +88,10 @@ static char	*read_line(int fd, char *line)
 /**
  * @brief Extrai a próxima linha da linha atual.
  *
- * Esta função extrai a próxima linha da linha atual e retorna uma nova string contendo a linha extraída.
- * A função remove a linha extraída da linha atual, atualizando-a para conter os bytes restantes.
+ * Esta função extrai a próxima linha da linha atual e retorna uma nova string 
+ * contendo a linha extraída.
+ * A função remove a linha extraída da linha atual, atualizando-a para conter 
+ * os bytes restantes.
  *
  * @param line A linha atual.
  * @return Uma nova string contendo a próxima linha extraída.
@@ -122,15 +126,17 @@ static char	*ft_next_line(char *line)
 /**
  * @brief Lê uma linha de um arquivo descritor de arquivo.
  *
- * Esta função lê uma linha do arquivo referenciado pelo descritor de arquivo `fd`.
- * A função armazena a linha em uma string alocada dinamicamente e retorna um ponteiro
- * para essa string. A função mantém o estado da leitura entre as chamadas, permitindo
- * que linhas sucessivas sejam lidas do arquivo.
+ * Esta função lê uma linha do arquivo referenciado pelo descritor de 
+ * arquivo `fd`.
+ * A função armazena a linha em uma string alocada dinamicamente e retorna 
+ * um ponteiro para essa string. A função mantém o estado da leitura entre a
+ * s chamadas, permitindo que linhas sucessivas sejam lidas do arquivo.
  *
  * @param fd O descritor de arquivo do arquivo a ser lido.
  * @return Um ponteiro para a linha lida do arquivo.
  *         A string é alocada dinamicamente e deve ser liberada pelo chamador.
- *         Retorna NULL se ocorrer um erro de leitura ou se não houver mais linhas para ler.
+ *         Retorna NULL se ocorrer um erro de leitura ou se não houver mais 
+ *         linhas para ler.
  */
 
 char	*ft_get_next_line(int fd)

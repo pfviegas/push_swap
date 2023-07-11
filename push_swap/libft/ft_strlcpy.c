@@ -13,12 +13,15 @@
 /**
  * @brief Copia uma string para um buffer com limite de tamanho.
  *
- * A função ft_strlcpy copia a string 'src' para o buffer 'dest', com limite de tamanho 'size'.
- * Ela garante que a string resultante seja sempre nul-terminada e que o tamanho final não exceda 'size'.
+ * A função ft_strlcpy copia a string 'src' para o buffer 'dest', com limite 
+ * de tamanho 'size'.
+ * Ela garante que a string resultante seja sempre nul-terminada e que o 
+ * tamanho final não exceda 'size'.
  * 
  * @param dest O buffer de destino para a cópia da string.
  * @param src A string a ser copiada.
- * @param size O tamanho máximo do buffer 'dest', incluindo o espaço para o caractere nul.
+ * @param size O tamanho máximo do buffer 'dest', incluindo o espaço para o 
+ *             caractere nul.
  * @return O comprimento da string de origem (não incluindo o caractere nul).
  */
 

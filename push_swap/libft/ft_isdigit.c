@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:05:22 by pviegas           #+#    #+#             */
-/*   Updated: 2023/04/12 16:05:28 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 16:35:50 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param c O caractere a ser verificado.
  * @return 1 se o caractere for um dígito decimal, 0 caso contrário.
  */
- 
+
 #include "libft.h"
 
 int	ft_isdigit(int c)

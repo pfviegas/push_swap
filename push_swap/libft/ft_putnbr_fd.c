@@ -6,19 +6,20 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:42:27 by pviegas           #+#    #+#             */
-/*   Updated: 2023/04/14 13:42:29 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 16:20:02 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @brief Escreve um número inteiro em um descritor de arquivo.
  *
- * A função ft_putnbr_fd escreve o número inteiro 'n' no descritor de arquivo 'fd'.
+ * A função ft_putnbr_fd escreve o número inteiro 'n' no descritor de 
+ * arquivo 'fd'.
  *
  * @param n O número inteiro a ser escrito.
  * @param fd O descritor de arquivo onde o número será escrito.
  */
- 
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)

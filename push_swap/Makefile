@@ -6,7 +6,7 @@
 #    By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/28 11:17:30 by pviegas           #+#    #+#              #
-#    Updated: 2023/07/10 15:27:26 by pviegas          ###   ########.fr        #
+#    Updated: 2023/07/11 15:58:18 by pviegas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			= push_swap
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS			= -Wall -Wextra -Werror -g #-fsanitize=address
 
 LIBFTDIR = libft/
 OBJ_DIR = obj/

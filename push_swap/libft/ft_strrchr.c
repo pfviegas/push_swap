@@ -13,13 +13,15 @@
 /**
  * @brief Localiza a última ocorrência de um caractere em uma string.
  *
- * A função ft_strrchr localiza a última ocorrência do caractere 'c' na string 'str'.
+ * A função ft_strrchr localiza a última ocorrência do caractere 'c' na 
+ * string 'str'.
  *
  * @param str A string em que a busca será realizada.
  * @param c O caractere a ser encontrado.
- * @return Um ponteiro para a última ocorrência de 'c' em 'str', ou NULL se não for encontrado.
+ * @return Um ponteiro para a última ocorrência de 'c' em 'str', ou NULL se 
+ * não for encontrado.
  */
- 
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)

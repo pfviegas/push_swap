@@ -21,8 +21,8 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdio.h>
-#include <fcntl.h>
-#include "../includes/push_swap.h"
+# include <fcntl.h>
+# include "../includes/push_swap.h"
 
 size_t	ft_strlen(const char *str);
 int		ft_isalpha(int c);

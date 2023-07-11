@@ -19,7 +19,7 @@
  * @param s O ponteiro para o bloco de memória a ser preenchido com zeros.
  * @param n O número de bytes a serem preenchidos com zeros.
  */
- 
+
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

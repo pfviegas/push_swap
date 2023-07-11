@@ -25,7 +25,7 @@
  * @return The substring or NULL if allocation fails or invalid parameters are
  * provided. The returned substring must be freed by the caller.
  */
- 
+
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

@@ -18,6 +18,18 @@
  * @return O valor inteiro convertido.
  */
 #include "libft.h"
+
+static void	sig_check(int *sign, const char **str)
+{
+	if (**str == '-')
+	{
+		*sign = -1;
+		(*str)++;
+	}
+	else if (**str == '+')
+		(*str)++;
+}
+
 // modificado para push_swap
 int	ft_atoi(const char *str)
 {
@@ -28,20 +40,16 @@ int	ft_atoi(const char *str)
 	res = 0;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
-	if (*str == '-')
+	sig_check(&sign, &str);
+	if (!*str)
+		error(1);
+	while (*str && ft_isdigit(*str))
 	{
-		sign = -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	while (*str)
-	{
-		if (!ft_isdigit(*str))
-			error(1);
 		res = res * 10 + (*str - '0');
 		str++;
 	}
+	if (*str && !ft_isdigit(*str))
+		error(1);
 	if ((sign * res) > 2147483647 || (sign * res) < -2147483648)
 		error(2);
 	return (sign * res);

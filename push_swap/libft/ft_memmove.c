@@ -11,16 +11,18 @@
 /* ************************************************************************** */
 
 /**
- * @brief Copia 'len' bytes da área de memória 'src' para a área de memória 'dst', tratando casos de sobreposição.
+ * @brief Copia 'len' bytes da área de memória 'src' para a área de memória 
+ * 'dst', tratando casos de sobreposição.
  *
- * A função ft_memmove copia 'len' bytes da área de memória 'src' para a área de memória 'dst', tratando casos em que as áreas de memória podem se sobrepor.
+ * A função ft_memmove copia 'len' bytes da área de memória 'src' para a área de
+ * memória 'dst', tratando casos em que as áreas de memória podem se sobrepor.
  *
  * @param dst O ponteiro para a área de memória de destino.
  * @param src O ponteiro para a área de memória de origem.
  * @param len O número de bytes a serem copiados.
  * @return Um ponteiro para a área de memória de destino.
  */
- 
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)

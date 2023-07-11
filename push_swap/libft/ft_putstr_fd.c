@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:38:57 by pviegas           #+#    #+#             */
-/*   Updated: 2023/04/14 13:38:59 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/11 16:21:32 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param s A string a ser escrita.
  * @param fd O descritor de arquivo onde a string será escrita.
  */
- 
+
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)

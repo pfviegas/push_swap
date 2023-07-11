@@ -13,14 +13,15 @@
 /**
  * @brief Preenche uma área de memória com um valor específico.
  *
- * A função ft_memset preenche os primeiros 'num' bytes da área de memória apontada por 'ptr' com o valor 'value'.
+ * A função ft_memset preenche os primeiros 'num' bytes da área de memória 
+ * apontada por 'ptr' com o valor 'value'.
  *
  * @param ptr O ponteiro para a área de memória a ser preenchida.
  * @param value O valor a ser colocado em cada byte.
  * @param num O número de bytes a serem preenchidos.
  * @return Um ponteiro para a área de memória preenchida.
  */
- 
+
 #include "libft.h"
 
 void	*ft_memset(void *ptr, int value, size_t num)

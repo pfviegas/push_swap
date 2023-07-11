@@ -22,7 +22,7 @@
  * @return Um ponteiro para a região de memória alocada e preenchida com zeros,
  *         ou NULL em caso de falha na alocação de memória.
  */
- 
+
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
