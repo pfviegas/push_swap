@@ -6,7 +6,7 @@
 #    By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/28 11:17:30 by pviegas           #+#    #+#              #
-#    Updated: 2023/07/11 15:58:18 by pviegas          ###   ########.fr        #
+#    Updated: 2023/07/11 17:08:28 by pviegas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ BONUS_OBJ = $(addprefix $(OBJ_DIR), $(notdir $(BONUS_SRC:.c=.o)))
 INCLUDE = -L ./libft -lft
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ${NAME}: ${OBJ_1} ${OBJ_2}
