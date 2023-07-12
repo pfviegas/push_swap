@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:20:03 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/11 14:22:00 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 16:31:36 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int	case_rarrb_a(t_stack *stack_a, t_stack *stack_b, int c)
 	return (moves);
 }
 
-// calculates the required amount of rotation.
-// calculations are done for rra+rb case.
+
+// calculates the number of moves for for rra+rb case.
 int	case_rrarb_a(t_stack *stack_a, t_stack *stack_b, int c)
 {
 	int	moves;

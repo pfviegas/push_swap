@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:50:18 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/12 14:03:22 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 16:32:09 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,23 @@ t_stack	*sort_b(t_stack **stack_a)
 // pushing back the elements from stack_b to stack_a until stack_b is empty. 
 t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
 {
-	int		i;
+	int		moves;
 	t_stack	*tmp;
 
 	while (*stack_b)
 	{
 		tmp = *stack_b;
-		i = rotate_type_ba(*stack_a, *stack_b);
-		while (i >= 0)
+		moves = rotate_type_ba(*stack_a, *stack_b);
+		while (moves >= 0)
 		{
-			if (i == case_rarb_a(*stack_a, *stack_b, tmp->content))
-				i = apply_rarb(stack_a, stack_b, tmp->content, 'b');
-			else if (i == case_rarrb_a(*stack_a, *stack_b, tmp->content))
-				i = apply_rarrb(stack_a, stack_b, tmp->content, 'b');
-			else if (i == case_rrarrb_a(*stack_a, *stack_b, tmp->content))
-				i = apply_rrarrb(stack_a, stack_b, tmp->content, 'b');
-			else if (i == case_rrarb_a(*stack_a, *stack_b, tmp->content))
-				i = apply_rrarb(stack_a, stack_b, tmp->content, 'b');
+			if (moves == case_rarb_a(*stack_a, *stack_b, tmp->content))
+				moves = apply_rarb(stack_a, stack_b, tmp->content, 'b');
+			else if (moves == case_rarrb_a(*stack_a, *stack_b, tmp->content))
+				moves = apply_rarrb(stack_a, stack_b, tmp->content, 'b');
+			else if (moves == case_rrarrb_a(*stack_a, *stack_b, tmp->content))
+				moves = apply_rrarrb(stack_a, stack_b, tmp->content, 'b');
+			else if (moves == case_rrarb_a(*stack_a, *stack_b, tmp->content))
+				moves = apply_rrarb(stack_a, stack_b, tmp->content, 'b');
 			else
 				tmp = tmp->next;
 		}
@@ -98,13 +98,13 @@ void	sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 		i = rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == case_rarb(*stack_a, *stack_b, tmp->content))
+			if (i == case_rarb_b(*stack_a, *stack_b, tmp->content))
 				i = apply_rarb(stack_a, stack_b, tmp->content, 'a');
-			else if (i == case_rrarrb(*stack_a, *stack_b, tmp->content))
+			else if (i == case_rrarrb_b(*stack_a, *stack_b, tmp->content))
 				i = apply_rrarrb(stack_a, stack_b, tmp->content, 'a');
-			else if (i == case_rarrb(*stack_a, *stack_b, tmp->content))
+			else if (i == case_rarrb_b(*stack_a, *stack_b, tmp->content))
 				i = apply_rarrb(stack_a, stack_b, tmp->content, 'a');
-			else if (i == case_rrarb(*stack_a, *stack_b, tmp->content))
+			else if (i == case_rrarb_b(*stack_a, *stack_b, tmp->content))
 				i = apply_rrarb(stack_a, stack_b, tmp->content, 'a');
 			else
 				tmp = tmp->next;

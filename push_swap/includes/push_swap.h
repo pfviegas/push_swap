@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:39:49 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/12 14:23:09 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 17:03:27 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 typedef struct s_stack
 {
 	int				content;
-	struct s_stack	*prev;
+//	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -60,20 +60,19 @@ void		sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 int			rotate_type_ab(t_stack *stack_a, t_stack *stack_b);
 int			rotate_type_ba(t_stack *stack_a, t_stack *stack_b);
 int			find_index(t_stack *stack_a, int nbr);
-int			case_rrarrb(t_stack *stack_a, t_stack *stack_b, int c);
-int			find_place_b(t_stack *stack_b, int nbr_push);
-int			find_place_a(t_stack *stack_a, int nbr_push);
-int			case_rarb_a(t_stack *stack_a, t_stack *stack_b, int c);
-int			case_rrarrb_a(t_stack *stack_a, t_stack *stack_b, int c);
-int			case_rarrb_a(t_stack *stack_a, t_stack *stack_b, int c);
-int			case_rrarb_a(t_stack *stack_a, t_stack *stack_b, int c);
-int			case_rarb(t_stack *stack_a, t_stack *stack_b, int c);
-int			case_rrarrb(t_stack *stack_a, t_stack *stack_b, int c);
-int			case_rrarb(t_stack *stack_a, t_stack *stack_b, int c);
-int			case_rarrb(t_stack *stack_a, t_stack *stack_b, int c);
-int			apply_rarb(t_stack **stack_a, t_stack **stack_b, int c, char s);
-int			apply_rrarrb(t_stack **stack_a, t_stack **stack_b, int c, char s);
-int			apply_rrarb(t_stack **stack_a, t_stack **stack_b, int c, char s);
-int			apply_rarrb(t_stack **stack_a, t_stack **stack_b, int c, char s);
+int			find_place_b(t_stack *stack_b, int nbr);
+int			find_place_a(t_stack *stack_a, int nbr);
+int			case_rarb_a(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			case_rrarrb_a(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			case_rarrb_a(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			case_rrarb_a(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			case_rarb_b(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			case_rrarrb_b(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			case_rrarb_b(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			case_rarrb_b(t_stack *stack_a, t_stack *stack_b, int nbr);
+int			apply_rarb(t_stack **stack_a, t_stack **stack_b, int nbr, char s);
+int			apply_rrarrb(t_stack **stack_a, t_stack **stack_b, int nbr, char s);
+int			apply_rrarb(t_stack **stack_a, t_stack **stack_b, int nbr, char s);
+int			apply_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr, char s);
 
 #endif

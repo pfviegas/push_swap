@@ -6,7 +6,7 @@
 #    By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/28 11:17:30 by pviegas           #+#    #+#              #
-#    Updated: 2023/07/11 17:08:28 by pviegas          ###   ########.fr        #
+#    Updated: 2023/07/12 16:20:29 by pviegas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,11 @@ NAME			= push_swap
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -g #-fsanitize=address
+CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
 
 LIBFTDIR = libft/
 OBJ_DIR = obj/
 SRC_DIR = srcs/
-BONUS = checker
 
 SRC_1 = srcs/push_swap.c 
 
@@ -34,16 +33,10 @@ SRC_2 =	srcs/apply_moves.c \
 		srcs/sorts.c \
 		srcs/stack_funcs_1.c \
 		srcs/stack_funcs_2.c \
-		srcs/stack_funcs_3.c \
-		
-BONUS_SRC = srcs/checker/checker.c \
-			srcs/checker/checker_utils.c \
-			
+		srcs/stack_funcs_3.c
 
 OBJ_1 = $(addprefix $(OBJ_DIR), $(notdir $(SRC_1:.c=.o)))
 OBJ_2 = $(addprefix $(OBJ_DIR), $(notdir $(SRC_2:.c=.o)))
-
-BONUS_OBJ = $(addprefix $(OBJ_DIR), $(notdir $(BONUS_SRC:.c=.o)))
 
 INCLUDE = -L ./libft -lft
 
@@ -55,16 +48,11 @@ ${NAME}: ${OBJ_1} ${OBJ_2}
 	make -C $(LIBFTDIR)
 	${CC} ${CFLAGS} ${OBJ_1} ${OBJ_2} -o ${NAME} ${INCLUDE}
 
-${BONUS}: ${OBJ_2} ${BONUS_OBJ} 
-	make -C $(LIBFTDIR)
-	${CC} ${CFLAGS} ${BONUS_OBJ} ${OBJ_2} -o ${BONUS} ${INCLUDE}
 
-all: ${NAME} ${BONUS}
-
-bonus: ${BONUS} 
+all: ${NAME}
 
 clean:
-	${RM} ${OBJ_DIR}*.o ${NAME} ${BONUS}
+	${RM} ${OBJ_DIR}*.o ${NAME}
 	@cd $(LIBFTDIR) && $(MAKE) clean
 
 fclean: clean
@@ -73,4 +61,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re 

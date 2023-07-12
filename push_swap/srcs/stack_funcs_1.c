@@ -33,7 +33,6 @@ t_stack	*stack_new(int content)
 	if (!new)
 		error(4);
 	new->content = content;
-//	new->index = index;
 	new->next = NULL;
 	return (new);
 }

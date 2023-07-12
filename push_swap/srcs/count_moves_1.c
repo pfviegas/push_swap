@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:20:11 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/11 14:26:02 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 16:30:37 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ int	rotate_type_ab(t_stack *stack_a, t_stack *stack_b)
 	t_stack	*tmp;
 
 	tmp = stack_a;
-	moves = case_rrarrb(stack_a, stack_b, stack_a->content);
+	moves = case_rrarrb_b(stack_a, stack_b, stack_a->content);
 	while (tmp)
 	{
-		if (moves > case_rarb(stack_a, stack_b, tmp->content))
-			moves = case_rarb(stack_a, stack_b, tmp->content);
-		if (moves > case_rrarrb(stack_a, stack_b, tmp->content))
-			moves = case_rrarrb(stack_a, stack_b, tmp->content);
-		if (moves > case_rarrb(stack_a, stack_b, tmp->content))
-			moves = case_rarrb(stack_a, stack_b, tmp->content);
-		if (moves > case_rrarb(stack_a, stack_b, tmp->content))
-			moves = case_rrarb(stack_a, stack_b, tmp->content);
+		if (moves > case_rarb_b(stack_a, stack_b, tmp->content))
+			moves = case_rarb_b(stack_a, stack_b, tmp->content);
+		if (moves > case_rrarrb_b(stack_a, stack_b, tmp->content))
+			moves = case_rrarrb_b(stack_a, stack_b, tmp->content);
+		if (moves > case_rarrb_b(stack_a, stack_b, tmp->content))
+			moves = case_rarrb_b(stack_a, stack_b, tmp->content);
+		if (moves > case_rrarb_b(stack_a, stack_b, tmp->content))
+			moves = case_rrarb_b(stack_a, stack_b, tmp->content);
 		tmp = tmp->next;
 	}
 	return (moves);
