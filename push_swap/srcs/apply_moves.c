@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:50:37 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/06 17:19:22 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 14:02:21 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@ int	apply_rarb(t_stack **stack_a, t_stack **stack_b, int c, char s)
 	if (s == 'a')
 	{
 		while ((*stack_a)->content != c && find_place_b(*stack_b, c) > 0)
-			rr(stack_a, stack_b, 0);
+			rr(stack_a, stack_b);
 		while ((*stack_a)->content != c)
-			ra(stack_a, 0);
+			ra(stack_a);
 		while (find_place_b(*stack_b, c) > 0)
-			rb(stack_b, 0);
-		pb(stack_a, stack_b, 0);
+			rb(stack_b);
+		pb(stack_a, stack_b);
 	}
 	else
 	{
 		while ((*stack_b)->content != c && find_place_a(*stack_a, c) > 0)
-			rr(stack_a, stack_b, 0);
+			rr(stack_a, stack_b);
 		while ((*stack_b)->content != c)
-			rb(stack_b, 0);
+			rb(stack_b);
 		while (find_place_a(*stack_a, c) > 0)
-			ra(stack_a, 0);
-		pa(stack_a, stack_b, 0);
+			ra(stack_a);
+		pa(stack_a, stack_b);
 	}
 	return (-1);
 }
@@ -46,22 +46,22 @@ int	apply_rrarrb(t_stack **stack_a, t_stack **stack_b, int c, char s)
 	if (s == 'a')
 	{
 		while ((*stack_a)->content != c && find_place_b(*stack_b, c) > 0)
-			rrr(stack_a, stack_b, 0);
+			rrr(stack_a, stack_b);
 		while ((*stack_a)->content != c)
-			rra(stack_a, 0);
+			rra(stack_a);
 		while (find_place_b(*stack_b, c) > 0)
-			rrb(stack_b, 0);
-		pb(stack_a, stack_b, 0);
+			rrb(stack_b);
+		pb(stack_a, stack_b);
 	}
 	else
 	{
 		while ((*stack_b)->content != c && find_place_a(*stack_a, c) > 0)
-			rrr(stack_a, stack_b, 0);
+			rrr(stack_a, stack_b);
 		while ((*stack_b)->content != c)
-			rrb(stack_b, 0);
+			rrb(stack_b);
 		while (find_place_a(*stack_a, c) > 0)
-			rra(stack_a, 0);
-		pa(stack_a, stack_b, 0);
+			rra(stack_a);
+		pa(stack_a, stack_b);
 	}
 	return (-1);
 }
@@ -73,18 +73,18 @@ int	apply_rrarb(t_stack **stack_a, t_stack **stack_b, int c, char s)
 	if (s == 'a')
 	{
 		while ((*stack_a)->content != c)
-			rra(stack_a, 0);
+			rra(stack_a);
 		while (find_place_b(*stack_b, c) > 0)
-			rb(stack_b, 0);
-		pb(stack_a, stack_b, 0);
+			rb(stack_b);
+		pb(stack_a, stack_b);
 	}
 	else
 	{
 		while (find_place_a(*stack_a, c) > 0)
-			rra(stack_a, 0);
+			rra(stack_a);
 		while ((*stack_b)->content != c)
-			rb(stack_b, 0);
-		pa(stack_a, stack_b, 0);
+			rb(stack_b);
+		pa(stack_a, stack_b);
 	}
 	return (-1);
 }
@@ -96,18 +96,18 @@ int	apply_rarrb(t_stack **stack_a, t_stack **stack_b, int c, char s)
 	if (s == 'a')
 	{
 		while ((*stack_a)->content != c)
-			ra(stack_a, 0);
+			ra(stack_a);
 		while (find_place_b(*stack_b, c) > 0)
-			rrb(stack_b, 0);
-		pb(stack_a, stack_b, 0);
+			rrb(stack_b);
+		pb(stack_a, stack_b);
 	}
 	else
 	{
 		while (find_place_a(*stack_a, c) > 0)
-			ra(stack_a, 0);
+			ra(stack_a);
 		while ((*stack_b)->content != c)
-			rrb(stack_b, 0);
-		pa(stack_a, stack_b, 0);
+			rrb(stack_b);
+		pa(stack_a, stack_b);
 	}
 	return (-1);
 }

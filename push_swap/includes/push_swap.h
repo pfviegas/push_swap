@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:39:49 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/11 16:52:02 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 14:23:09 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 typedef struct s_stack
 {
 	int				content;
-	int				index;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
@@ -33,24 +32,24 @@ void		check_doubles(char **arg);
 void		error(int error);
 void		save_args(char **argv, t_stack **stack_a);
 void		add_back(t_stack **stack, t_stack *stack_new);
-t_stack		*stack_new(int content, int index);
+t_stack		*stack_new(int content);
 t_stack		*stack_last(t_stack *lst);
 int			stack_size(t_stack *lst);
 int			is_stack_sorted(t_stack *stack_a);
 void		free_stack(t_stack **lst);
 void		sort_stack(t_stack **stack_a);
-void		sa(t_stack **stack_a, int print);
-void		sb(t_stack **stack_b, int print);
-void		ss(t_stack **stack_a, t_stack **b, int print);
-void		pa(t_stack **stack_a, t_stack **b, int print);
-void		pb(t_stack **stack_a, t_stack **stack_b, int print);
-void		ra(t_stack **stack_a, int print);
-void		rb(t_stack **stack_b, int print);
-void		rr(t_stack **stack_a, t_stack **stack_b, int print);
-void		rra(t_stack **stack_a, int print);
-void		rrb(t_stack **stack_b, int print);
-void		rrr(t_stack **stack_a, t_stack **stack_b, int print);
-void		rrr_sub(t_stack **stack_b, int print);
+void		sa(t_stack **stack_a);
+void		sb(t_stack **stack_b);
+void		ss(t_stack **stack_a, t_stack **b);
+void		pa(t_stack **stack_a, t_stack **b);
+void		pb(t_stack **stack_a, t_stack **stack_b);
+void		ra(t_stack **stack_a);
+void		rb(t_stack **stack_b);
+void		rr(t_stack **stack_a, t_stack **stack_b);
+void		rra(t_stack **stack_a);
+void		rrb(t_stack **stack_b);
+void		rrr(t_stack **stack_a, t_stack **stack_b);
+void		rrr_sub(t_stack **stack_b);
 void		check_size(t_stack **stack_a);
 void		sort_3(t_stack **stack_a);
 int			min(t_stack *stack_a);

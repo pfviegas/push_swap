@@ -25,7 +25,7 @@ void	add_back(t_stack **stack, t_stack *stack_new)
 }
 
 // creates a new stack node with given number.
-t_stack	*stack_new(int content, int index)
+t_stack	*stack_new(int content)
 {
 	t_stack	*new;
 
@@ -33,7 +33,7 @@ t_stack	*stack_new(int content, int index)
 	if (!new)
 		error(4);
 	new->content = content;
-	new->index = index;
+//	new->index = index;
 	new->next = NULL;
 	return (new);
 }

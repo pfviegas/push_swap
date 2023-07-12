@@ -69,6 +69,6 @@ int	find_index(t_stack *stack_a, int nbr)
 		index++;
 		stack_a = stack_a->next;
 	}
-	stack_a->index = 0;
+//	stack_a->index = 0;
 	return (index);
 }

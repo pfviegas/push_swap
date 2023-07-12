@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 12:12:58 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/11 16:02:29 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 12:37:16 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	save_args(char **argv, t_stack **stack_a)
 	i = 1;
 	while (argv[i])
 	{
-		add_back(stack_a, stack_new(ft_atoi(argv[i]), i - 1));
+		add_back(stack_a, stack_new(ft_atoi(argv[i])));
 		i++;
 	}
 }

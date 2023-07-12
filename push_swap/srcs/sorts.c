@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:50:18 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/11 14:26:46 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/12 14:03:22 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,27 @@
 
 // sorts the stack_a
 // all values pushed to stack_b, sorted and pushed back to stack_a. 
-// Because, even the stack_a is sorted at the end, the minimum number have to 
+// because, even the stack_a is sorted at the end, the minimum number have to 
 // at the top of the stack_a. 
 // So, it simply brings the smallest number of the stack_a to the top.
 void	sort_stack(t_stack **stack_a)
 {
 	t_stack	*stack_b;
-	int		i;
+	int		index;
 
 	stack_b = NULL;
-	if (stack_size(*stack_a) == 2)
-		sa(stack_a, 0);
+	stack_b = sort_b(stack_a);
+	stack_a = sort_a(stack_a, &stack_b);
+	index = find_index(*stack_a, min(*stack_a));
+	if (index < stack_size(*stack_a) - index)
+	{
+		while ((*stack_a)->content != min(*stack_a))
+			ra(stack_a);
+	}
 	else
 	{
-		stack_b = sort_b(stack_a);
-		stack_a = sort_a(stack_a, &stack_b);
-		i = find_index(*stack_a, min(*stack_a));
-		if (i < stack_size(*stack_a) - i)
-		{
-			while ((*stack_a)->content != min(*stack_a))
-				ra(stack_a, 0);
-		}
-		else
-		{
-			while ((*stack_a)->content != min(*stack_a))
-				rra(stack_a, 0);
-		}
+		while ((*stack_a)->content != min(*stack_a))
+			rra(stack_a);
 	}
 }
 
@@ -49,14 +44,14 @@ void	sort_stack(t_stack **stack_a)
 // when three elements are left, it calls the sort_3 function to sort 
 // left over elements in stack_a.
 t_stack	*sort_b(t_stack **stack_a)
-{
+{//}
 	t_stack	*stack_b;
 
 	stack_b = NULL;
 	if (stack_size(*stack_a) > 3 && !is_stack_sorted(*stack_a))
-		pb(stack_a, &stack_b, 0);
+		pb(stack_a, &stack_b);
 	if (stack_size(*stack_a) > 3 && !is_stack_sorted(*stack_a))
-		pb(stack_a, &stack_b, 0);
+		pb(stack_a, &stack_b);
 	if (stack_size(*stack_a) > 3 && !is_stack_sorted(*stack_a))
 		sort_b_till_3(stack_a, &stack_b);
 	if (!is_stack_sorted(*stack_a))
@@ -122,20 +117,20 @@ void	sort_3(t_stack **stack_a)
 {
 	if ((*stack_a)->content == min(*stack_a))
 	{
-		rra(stack_a, 0);
-		sa(stack_a, 0);
+		rra(stack_a);
+		sa(stack_a);
 	}
 	else if ((*stack_a)->content == max(*stack_a))
 	{
-		ra(stack_a, 0);
+		ra(stack_a);
 		if (!is_stack_sorted(*stack_a))
-			sa(stack_a, 0);
+			sa(stack_a);
 	}
 	else
 	{
 		if ((*stack_a)->content < (*stack_a)->next->content)
-			rra(stack_a, 0);
+			rra(stack_a);
 		else
-			sa(stack_a, 0);
+			sa(stack_a);
 	}
 }
