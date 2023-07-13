@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   count_moves_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:20:11 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/12 16:30:37 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/13 16:14:55 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 // calculates which rotation combination is best to use to sort the stack. 
-// after rotation there is always one push operation is left to do which is 
-// embedded in code, this function is used during push from A to B.
-int	rotate_type_ab(t_stack *stack_a, t_stack *stack_b)
+// this function is used during push from A to B.
+int	move_type_ab(t_stack *stack_a, t_stack *stack_b)
 {
 	int		moves;
 	t_stack	*tmp;
@@ -38,9 +37,8 @@ int	rotate_type_ab(t_stack *stack_a, t_stack *stack_b)
 }
 
 // calculates which rotation combination is best to use to sort the stack. 
-// after rotation there is always one push operation is left to do which is 
-// embedded in code, this function is used during push from B to A.
-int	rotate_type_ba(t_stack *stack_a, t_stack *stack_b)
+// this function is used during push from B to A.
+int	move_type_ba(t_stack *stack_a, t_stack *stack_b)
 {
 	int		moves;
 	t_stack	*tmp;

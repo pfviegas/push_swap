@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 12:12:58 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/12 12:37:16 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/13 14:35:38 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@
 t_stack	*check_args(int argc, char **argv)
 {
 	t_stack	*stack_a;
-	int		i;
 	char	**arg;
 
-	i = 1;
 	stack_a = NULL;
 	if (argc < 2)
 		exit(1);

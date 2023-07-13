@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:39:49 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/12 17:03:27 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/13 15:35:30 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int			max(t_stack *stack_a);
 t_stack		*sort_b(t_stack **stack_a);
 t_stack		**sort_a(t_stack **stack_a, t_stack **stack_b);
 void		sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
-int			rotate_type_ab(t_stack *stack_a, t_stack *stack_b);
-int			rotate_type_ba(t_stack *stack_a, t_stack *stack_b);
+int			move_type_ab(t_stack *stack_a, t_stack *stack_b);
+int			move_type_ba(t_stack *stack_a, t_stack *stack_b);
 int			find_index(t_stack *stack_a, int nbr);
 int			find_place_b(t_stack *stack_b, int nbr);
 int			find_place_a(t_stack *stack_a, int nbr);

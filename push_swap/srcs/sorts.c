@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorts.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:50:18 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/12 16:32:09 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/13 15:35:19 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,11 @@ void	sort_stack(t_stack **stack_a)
 }
 
 // pushes one by one, all the elements in stack_a to the stack_b, 
-// until only three elements are left in stack_a. 
+// until only 3 elements are left in stack_a. 
 // while pushing, it makes sure that stack_b is sorted. 
-// when three elements are left, it calls the sort_3 function to sort 
-// left over elements in stack_a.
+// when 3 elements are left, it calls the sort_3 function
 t_stack	*sort_b(t_stack **stack_a)
-{//}
+{
 	t_stack	*stack_b;
 
 	stack_b = NULL;
@@ -68,7 +67,7 @@ t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
 	while (*stack_b)
 	{
 		tmp = *stack_b;
-		moves = rotate_type_ba(*stack_a, *stack_b);
+		moves = move_type_ba(*stack_a, *stack_b);
 		while (moves >= 0)
 		{
 			if (moves == case_rarb_a(*stack_a, *stack_b, tmp->content))
@@ -89,23 +88,23 @@ t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
 // sort and push stacks until 3 elements left behind.
 void	sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 {
-	int		i;
+	int		moves;
 	t_stack	*tmp;
 
 	while (stack_size(*stack_a) > 3 && !is_stack_sorted(*stack_a))
 	{
 		tmp = *stack_a;
-		i = rotate_type_ab(*stack_a, *stack_b);
-		while (i >= 0)
+		moves = move_type_ab(*stack_a, *stack_b);
+		while (moves >= 0)
 		{
-			if (i == case_rarb_b(*stack_a, *stack_b, tmp->content))
-				i = apply_rarb(stack_a, stack_b, tmp->content, 'a');
-			else if (i == case_rrarrb_b(*stack_a, *stack_b, tmp->content))
-				i = apply_rrarrb(stack_a, stack_b, tmp->content, 'a');
-			else if (i == case_rarrb_b(*stack_a, *stack_b, tmp->content))
-				i = apply_rarrb(stack_a, stack_b, tmp->content, 'a');
-			else if (i == case_rrarb_b(*stack_a, *stack_b, tmp->content))
-				i = apply_rrarb(stack_a, stack_b, tmp->content, 'a');
+			if (moves == case_rarb_b(*stack_a, *stack_b, tmp->content))
+				moves = apply_rarb(stack_a, stack_b, tmp->content, 'a');
+			else if (moves == case_rrarrb_b(*stack_a, *stack_b, tmp->content))
+				moves = apply_rrarrb(stack_a, stack_b, tmp->content, 'a');
+			else if (moves == case_rarrb_b(*stack_a, *stack_b, tmp->content))
+				moves = apply_rarrb(stack_a, stack_b, tmp->content, 'a');
+			else if (moves == case_rrarb_b(*stack_a, *stack_b, tmp->content))
+				moves = apply_rrarb(stack_a, stack_b, tmp->content, 'a');
 			else
 				tmp = tmp->next;
 		}
