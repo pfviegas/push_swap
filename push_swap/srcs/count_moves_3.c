@@ -6,7 +6,7 @@
 /*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:20:03 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/12 16:31:36 by pviegas          ###   ########.fr       */
+/*   Updated: 2023/07/14 10:35:21 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	case_rarrb_a(t_stack *stack_a, t_stack *stack_b, int c)
 	moves = find_place_a(stack_a, c) + moves;
 	return (moves);
 }
-
 
 // calculates the number of moves for for rra+rb case.
 int	case_rrarb_a(t_stack *stack_a, t_stack *stack_b, int c)

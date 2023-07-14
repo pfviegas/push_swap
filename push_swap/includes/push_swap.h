@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:39:49 by pviegas           #+#    #+#             */
-/*   Updated: 2023/07/13 15:35:30 by root             ###   ########.fr       */
+/*   Updated: 2023/07/14 10:35:38 by pviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 typedef struct s_stack
 {
 	int				content;
-//	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
 
